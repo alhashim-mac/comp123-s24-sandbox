@@ -1,17 +1,24 @@
 import turtle
 
-screen1 = turtle.Screen()     # instantiate a Screen object
-screen1.bgcolor("PeachPuff")  # change the background color attribute of the
-                              # Screen object by invoking/calling the bgcolor
-                              # method
+# instantiate a Screen object
+screen1 = turtle.Screen()
 
-turtle1 = turtle.Turtle()   # instantiate a Turtle object
-turtle1.pensize(10)         # change the pen size attribute of the Turtle object
+# change the background color attribute of the Screen object by
+# invoking/calling the bgcolor method
+screen1.bgcolor("PeachPuff")
 
-turtle1.forward(100)        # moving the Turtle object forward by invoke/call
-                            # the forward method
-turtle1.left(90)            # turning the Turtle object to the left
-                            # 90 degrees by invoke/call the left method
+# instantiate a Turtle object
+turtle1 = turtle.Turtle()
+
+# change the pen size attribute of the Turtle object
+turtle1.pensize(10)
+
+# moving the Turtle object forward by invoke/call the forward method
+turtle1.forward(100)
+
+# turning the Turtle object to the left 90 degrees by invoke/call the
+# left method
+turtle1.left(90)
 
 turtle1.forward(200)
 turtle1.left(90)
