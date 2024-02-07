@@ -7,7 +7,6 @@ The script demonstrates
 
 @auther: Amin Alhashim (aalhashi@macalester.edu)
 """
-
 import random
 
 
@@ -21,9 +20,9 @@ def print_hello_5():
 def print_hello(n):
     for i in range(n):
         print("Hello!")
-
-
 # fruitful function with no (formal) parameters
+
+
 def give_rand():
     r = random.random()     # temporary local variable
     return r
