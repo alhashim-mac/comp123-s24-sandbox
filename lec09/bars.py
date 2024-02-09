@@ -2,8 +2,10 @@ import turtle
 
 from bargraph import *
 
-screen = turtle.Screen()
-t = turtle.Turtle()
+main()
 
-drawBar(t, 20)
-screen.mainloop()
+# screen = turtle.Screen()
+# t = turtle.Turtle()
+#
+# drawBar(t, 20)
+# screen.mainloop()
