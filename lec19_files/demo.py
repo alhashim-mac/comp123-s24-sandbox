@@ -5,6 +5,15 @@ def read_one_line():
     df.close()
 
 
+def read_pass_content() -> None:
+    df = open("data.txt", "r")
+    content = df.read()
+    print('>' + content + '<')
+    content = df.read()
+    print('>' + content + '<')
+    df.close()
+
+
 def cannot_read_after_close():
     df = open("data.txt", "r")
     df.readline()
@@ -54,6 +63,7 @@ def read_first_10_line_of_webpage(url):
 if __name__ == '__main__':
     ...  # or pass
     # read_one_line()
+    read_pass_content()
     # cannot_read_after_close()
     # read_all_content_all_at_once()
     # read_all_content_line_by_line_using_for()  # why empty lines?
