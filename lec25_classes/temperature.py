@@ -4,7 +4,7 @@ Calculate the average and standard deviation of the low and high temperatures of
 import statistics
 
 
-def approach1():
+def multivariable_approach():
     print("Day 1")
     day1_lo = int(input("Enter low  temperature: "))
     day1_hi = int(input("Enter high temperature: "))
@@ -35,8 +35,37 @@ def approach1():
     print(f"Average low  temperature: {hi_avg:.2f}±{hi_sd:.2f}")
 
 
+def list_approach():
+    lo_temps = []
+    hi_temps = []
+
+    for i in range(1, 6):
+        print("Day", i)
+        lo_temps.append(int(input("Enter low  temperature: ")))
+        hi_temps.append(int(input("Enter high temperature: ")))
+
+    lo_avg = statistics.mean(lo_temps)
+    hi_avg = statistics.mean(hi_temps)
+
+    lo_sd = statistics.stdev(lo_temps)
+    hi_sd = statistics.stdev(hi_temps)
+
+    print(f"Average low  temperature: {lo_avg:.2f}±{lo_sd:.2f}")
+    print(f"Average low  temperature: {hi_avg:.2f}±{hi_sd:.2f}")
+
+
+class Temperature:
+    def __init__(self, lo, hi):
+        self.lo = lo
+        self.hi = hi
+
+
+def class_approach():
+    
+
 def main():
-    approach1()
+    # multivariable_approach()
+    # list_approach()
 
 
 if __name__ == '__main__':
