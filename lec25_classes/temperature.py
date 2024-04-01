@@ -26,10 +26,10 @@ def multivariable_approach():
     day5_hi = int(input("Enter high temperature: "))
 
     lo_avg = statistics.mean([day1_lo, day2_lo, day3_lo, day4_lo, day5_lo])
-    hi_avg = statistics.mean([day1_hi, day2_hi, day3_hi, day5_hi, day5_hi])
+    hi_avg = statistics.mean([day1_hi, day2_hi, day3_hi, day4_hi, day5_hi])
 
     lo_sd = statistics.stdev([day1_lo, day2_lo, day3_lo, day4_lo, day5_lo])
-    hi_sd = statistics.stdev([day1_hi, day2_hi, day3_hi, day5_hi, day5_hi])
+    hi_sd = statistics.stdev([day1_hi, day2_hi, day3_hi, day4_hi, day5_hi])
 
     print(f"Average low  temperature: {lo_avg:.2f}±{lo_sd:.2f}")
     print(f"Average low  temperature: {hi_avg:.2f}±{hi_sd:.2f}")
@@ -41,8 +41,10 @@ def list_approach():
 
     for i in range(1, 6):
         print("Day", i)
-        lo_temps.append(int(input("Enter low  temperature: ")))
-        hi_temps.append(int(input("Enter high temperature: ")))
+        lo = int(input("Enter low  temperature: "))
+        hi = int(input("Enter high temperature: "))
+        lo_temps.append(lo)
+        hi_temps.append(hi)
 
     lo_avg = statistics.mean(lo_temps)
     hi_avg = statistics.mean(hi_temps)
@@ -61,11 +63,33 @@ class Temperature:
 
 
 def class_approach():
-    
+    temps = []
+
+    for i in range(1, 6):
+        print("Day", i)
+        lo = int(input("Enter low  temperature: "))
+        hi = int(input("Enter high temperature: "))
+        temp = Temperature(lo, hi)
+        temps.append(temp)
+
+    lo_temps = [temperature.lo for temperature in temps]
+    hi_temps = [temperature.hi for temperature in temps]
+
+    lo_avg = statistics.mean(lo_temps)
+    hi_avg = statistics.mean(hi_temps)
+
+    lo_sd = statistics.stdev(lo_temps)
+    hi_sd = statistics.stdev(hi_temps)
+
+    print(f"Average low  temperature: {lo_avg:.2f}±{lo_sd:.2f}")
+    print(f"Average low  temperature: {hi_avg:.2f}±{hi_sd:.2f}")
+
 
 def main():
     # multivariable_approach()
     # list_approach()
+    # class_approach()
+    pass
 
 
 if __name__ == '__main__':
