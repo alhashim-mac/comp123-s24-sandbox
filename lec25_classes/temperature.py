@@ -36,8 +36,8 @@ def multivariable_approach():
 
 
 def list_approach():
-    lo_temps = []
-    hi_temps = []
+    lo_temps: int = []
+    hi_temps: int = []
 
     for i in range(1, 6):
         print("Day", i)
@@ -72,8 +72,8 @@ def class_approach():
         temp = Temperature(lo, hi)
         temps.append(temp)
 
-    lo_temps = [temperature.lo for temperature in temps]
-    hi_temps = [temperature.hi for temperature in temps]
+    lo_temps = [temperature.lo for temperature in temps]  # List Comprehension
+    hi_temps = [temperature.hi for temperature in temps]  # List Comprehension
 
     lo_avg = statistics.mean(lo_temps)
     hi_avg = statistics.mean(hi_temps)
