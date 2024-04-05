@@ -12,7 +12,6 @@ def gcd(m, n):
 
 class Fraction:
     def __init__(self, top, bottom):
-
         self.num = top        # the numerator is on top
         self.den = bottom     # the denominator is on the bottom
 
