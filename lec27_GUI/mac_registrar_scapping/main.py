@@ -1,20 +1,19 @@
 """
-Inspirational Tutorial: https://www.youtube.com/watch?v=1PCWwK0AsE0&t=12s
+Inspirational Tutorial: https://www.youtube.com/watch?v=qxj7EXYeNls
 
 Required Packages:
 - httpx: alternatives: requests
 - selectolax: HTML parser, alternatives: Beautiful Soup
 """
 
-import httpx
-from selectolax.parser import HTMLParser
+import requests
 
-url = 'https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule'
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"}
+fall2024_class_schedule_url = 'https://macadmsys.macalester.edu/macssb/internalPb/virtualDomains.classScheduleClasses?MzY%3DcGFybV9zdWJq=NjY%3DJQ%3D%3D&NTE%3DbWF4=MTg%3DNTAwMA%3D%3D&NTE%3DcGFybV90ZXJt=ODc%3DMjAyNTEw&NzE%3Db2Zmc2V0=NzM%3DMA%3D%3D&encoded=true'
+classes = requests.get(fall2024_class_schedule_url)
+print(type(classes.json()))
 
-resp = httpx.get(url, headers=headers, follow_redirects=True)
-html = HTMLParser(resp.text)
-
-classes = html.css("div#TableCRN30183")
-print(classes)
-
+for c in classes.json():
+    if c["SUBJ_CODE"] != "COMP":
+        continue
+    print(c)
+    # print(f"{c['CRSE_NUMB']} \t {c['SUBJ_CODE']}")
