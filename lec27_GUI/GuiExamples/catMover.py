@@ -16,7 +16,9 @@ class CatMover:
         self.myCanvas.grid(row=10, column=10)
 
         initPhoto = Image.open("catWalking.jpg")
-        self.photo1 = ImageTk.PhotoImage(initPhoto)
+        # self.photo1 = ImageTk.PhotoImage(initPhoto)
+        self.photo1 = ImageTk.PhotoImage(file="catWalking.jpg")
+        # self.photo1 = tk.PhotoImage(file="catWalking.jpg")
 
         self.theCat = self.myCanvas.create_image(50, 50, image=self.photo1)
         self.rootWin.bind("w", self.moveCat)
